@@ -1,1 +1,10 @@
 c:\users\edgar valdes\documents\visual studio 2015\Projects\ModeladoYSimulacion\ModeladoYSimulacion\bin\Debug\ModeladoYSimulacion.exe.config
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\bin\Debug\ModeladoYSimulacion.exe.config
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\bin\Debug\ModeladoYSimulacion.exe
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\bin\Debug\ModeladoYSimulacion.pdb
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\obj\Debug\ModeladoYSimulacion.csprojResolveAssemblyReference.cache
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\obj\Debug\ModeladoYSimulacion.Form1.resources
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\obj\Debug\ModeladoYSimulacion.Properties.Resources.resources
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\obj\Debug\ModeladoYSimulacion.csproj.GenerateResource.Cache
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\obj\Debug\ModeladoYSimulacion.exe
+C:\Users\Edgar Valdes\Documents\GitHub\ModeladoYSimulacion\ModeladoYSimulacion\obj\Debug\ModeladoYSimulacion.pdb

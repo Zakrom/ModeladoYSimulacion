@@ -34,7 +34,7 @@
             this.lblEmpleadosM = new System.Windows.Forms.Label();
             this.numMeses = new System.Windows.Forms.NumericUpDown();
             this.lblMeses = new System.Windows.Forms.Label();
-            this.colDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTurno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAsistencias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProduccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colDay,
+            this.colWeek,
             this.colTurno,
             this.colAsistencias,
             this.colProduccion});
@@ -67,6 +67,7 @@
             this.btnSimulacion.TabIndex = 1;
             this.btnSimulacion.Text = "Comenzar Simulacion";
             this.btnSimulacion.UseVisualStyleBackColor = true;
+            this.btnSimulacion.Click += new System.EventHandler(this.btnSimulacion_Click);
             // 
             // numEmpleados
             // 
@@ -105,12 +106,12 @@
             this.lblMeses.Text = "Número de Meses:";
             this.lblMeses.Click += new System.EventHandler(this.lblMeses_Click);
             // 
-            // colDay
+            // colWeek
             // 
-            this.colDay.HeaderText = "Día";
-            this.colDay.Name = "colDay";
-            this.colDay.ReadOnly = true;
-            this.colDay.Width = 40;
+            this.colWeek.HeaderText = "Semana";
+            this.colWeek.Name = "colWeek";
+            this.colWeek.ReadOnly = true;
+            this.colWeek.Width = 50;
             // 
             // colTurno
             // 
@@ -159,7 +160,7 @@
         private System.Windows.Forms.Label lblEmpleadosM;
         private System.Windows.Forms.NumericUpDown numMeses;
         private System.Windows.Forms.Label lblMeses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colWeek;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTurno;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAsistencias;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProduccion;
