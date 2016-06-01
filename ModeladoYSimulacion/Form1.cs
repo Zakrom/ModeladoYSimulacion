@@ -20,7 +20,8 @@ namespace ModeladoYSimulacion
         float nx = 0;
         int asistencia;
         float R;
-
+        float restante;
+        int semanas;
         public Form1()
         {
             InitializeComponent();
@@ -50,20 +51,17 @@ namespace ModeladoYSimulacion
 
         private void btnSimulacion_Click(object sender, EventArgs e)
         {
-            int days = Convert.ToInt32(numMeses.Value) * 4; 
+            semanas = Convert.ToInt32(numMeses.Value) * 4;
+            dataGridView1.Rows.Clear();
            
-            for(int i =1; i <= days; i++)
+            for(int i =1; i <= semanas; i++)
             {
 
-                dataGridView1.Rows.Add(i, "Matutino", asistenciaM(), produccionM());
-                dataGridView1.Rows.Add(i, "Vespertino", asistenciaV(), produccionV());
-                dataGridView1.Rows.Add(i, "Nocturno", asistenciaN(), produccionN());
-               
-                    
-
+                dataGridView1.Rows.Add(i, "Matutino", asistenciaM(), produccionM(), restante);
+                dataGridView1.Rows.Add(i, "Vespertino", asistenciaV(), produccionV(), restante);
+                dataGridView1.Rows.Add(i, "Nocturno", asistenciaN(), produccionN(), restante);
             }
-
-            
+            calcularPromedios(); 
         }
 
         public float randomGen()
@@ -94,7 +92,14 @@ namespace ModeladoYSimulacion
 
         public int produccionM()
         {
-            int produccionM = asistencia * 25 * 8;
+            restante = 0;
+            int produccionM = asistencia * 25 * 7;
+
+            if(produccionM > 4800)
+            {
+                restante = (produccionM - 4800) / 100;
+                produccionM = 4800;
+            }
 
             return produccionM;
         }
@@ -119,7 +124,14 @@ namespace ModeladoYSimulacion
 
         public int produccionV()
         {
-            int produccionV = asistencia * 25 * 8;
+            restante = 0;
+            int produccionV = asistencia * 25 * 7;
+            if (produccionV > 4800)
+            {
+                restante = (produccionV - 4800) / 100;
+                produccionV = 4800;
+            }
+
             return produccionV;
         }
 
@@ -142,10 +154,89 @@ namespace ModeladoYSimulacion
 
         public int produccionN()
         {
-            int produccionN = asistencia * 25 * 8;
+            restante = 0;
+            int produccionN = asistencia * 25 * 7;
+            if (produccionN > 4800)
+            {
+                restante = (produccionN - 4800) / 100;
+                produccionN = 4800;
+            }
+
             return produccionN;
         }
 
+
+        public void calcularPromedios()
+        {
+            lblAsistenciasM.Text = "Asistencias:";
+            lblAsistenciasV.Text = "Asistencias:";
+            lblAsistenciasN.Text = "Asistencias:";
+            lblProduccionM.Text = "Produccion:";
+            lblProduccionV.Text = "Produccion:";
+            lblProduccionN.Text = "Produccion:";
+            lblOcioM.Text = "Tiempo de Ocio:";
+            lblOcioV.Text = "Tiempo de Ocio:";
+            lblOcioN.Text = "Tiempo de Ocio:";
+
+            float AsistenciaM =0;
+            float AsistenciaV =0;
+            float AsistenciaN =0;
+            float ProduccionM =0;
+            float ProduccionV = 0;
+            float ProduccionN = 0;
+            float OcioM = 0;
+            float OcioV = 0;
+            float OcioN = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                //2==asistencia,3==produccion,4==ocio
+                if (Convert.ToString(row.Cells[1].Value) == "Matutino")
+                {
+                    AsistenciaM += Convert.ToInt32(row.Cells[2].Value);
+                    ProduccionM += Convert.ToInt32(row.Cells[3].Value);
+                    OcioM += Convert.ToInt32(row.Cells[4].Value);
+                }
+
+                else if (Convert.ToString(row.Cells[1].Value) == "Vespertino")
+                {
+                    AsistenciaV += Convert.ToInt32(row.Cells[2].Value);
+                    ProduccionV += Convert.ToInt32(row.Cells[3].Value);
+                    OcioV += Convert.ToInt32(row.Cells[4].Value);
+                }
+
+                else if (Convert.ToString(row.Cells[1].Value) == "Nocturno")
+                {
+                    AsistenciaN += Convert.ToInt32(row.Cells[2].Value);
+                    ProduccionN += Convert.ToInt32(row.Cells[3].Value);
+                    OcioN += Convert.ToInt32(row.Cells[4].Value);
+                } 
+            }
+            float promProduccionM = ProduccionM / semanas;
+            float promProduccionV = ProduccionV / semanas;
+            float promProduccionN = ProduccionN / semanas;
+            float promAsistenciasM = AsistenciaM / semanas;
+            float promAsistenciasV = AsistenciaV / semanas;
+            float promAsistenciasN = AsistenciaN / semanas;
+            float promOcioM = OcioM / semanas;
+            float promOcioV = OcioV / semanas;
+            float promOcioN = OcioN / semanas;
+
+            lblAsistenciasM.Text += " " + Convert.ToString(promAsistenciasM);
+            lblAsistenciasV.Text += " " + Convert.ToString(promAsistenciasV);
+            lblAsistenciasN.Text += " " + Convert.ToString(promAsistenciasN); 
+            lblProduccionM.Text += " " + Convert.ToString(promProduccionM);
+            lblProduccionV.Text += " " + Convert.ToString(promProduccionV);
+            lblProduccionN.Text += " " + Convert.ToString(promProduccionN);
+            lblOcioM.Text += " " + Convert.ToString(promOcioM);
+            lblOcioV.Text += " " + Convert.ToString(promOcioV);
+            lblOcioN.Text += " " + Convert.ToString(promOcioN);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
      
 }
