@@ -221,15 +221,15 @@ namespace ModeladoYSimulacion
             float promOcioV = OcioV / semanas;
             float promOcioN = OcioN / semanas;
 
-            lblAsistenciasM.Text += " " + Convert.ToString(promAsistenciasM);
-            lblAsistenciasV.Text += " " + Convert.ToString(promAsistenciasV);
-            lblAsistenciasN.Text += " " + Convert.ToString(promAsistenciasN); 
-            lblProduccionM.Text += " " + Convert.ToString(promProduccionM);
-            lblProduccionV.Text += " " + Convert.ToString(promProduccionV);
-            lblProduccionN.Text += " " + Convert.ToString(promProduccionN);
-            lblOcioM.Text += " " + Convert.ToString(promOcioM);
-            lblOcioV.Text += " " + Convert.ToString(promOcioV);
-            lblOcioN.Text += " " + Convert.ToString(promOcioN);
+            lblAsistenciasM.Text += " " + Convert.ToString(promAsistenciasM)+ " semanalmente";
+            lblAsistenciasV.Text += " " + Convert.ToString(promAsistenciasV) + " semanalmente";
+            lblAsistenciasN.Text += " " + Convert.ToString(promAsistenciasN) + " semanalmente"; 
+            lblProduccionM.Text += " " + Convert.ToString(promProduccionM)+ " kg.";
+            lblProduccionV.Text += " " + Convert.ToString(promProduccionV) + " kg.";
+            lblProduccionN.Text += " " + Convert.ToString(promProduccionN) + " kg.";
+            lblOcioM.Text += " " + Convert.ToString(promOcioM) + " horas";
+            lblOcioV.Text += " " + Convert.ToString(promOcioV) + " horas";
+            lblOcioN.Text += " " + Convert.ToString(promOcioN) + " horas";
 
         }
 
